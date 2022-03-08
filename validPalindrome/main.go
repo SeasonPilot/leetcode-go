@@ -9,6 +9,7 @@ import (
 func isPalindrome(s string) bool {
 	//1.去除非数字字母
 	filterS := filterNonNumberAndChar(s)
+	fmt.Println(filterS)
 
 	//2.字母全部转换为小写
 	lowerS := strings.ToLower(filterS)
@@ -18,7 +19,9 @@ func isPalindrome(s string) bool {
 }
 
 func filterNonNumberAndChar(s string) string {
+	// 正则表达式是 [^\w]。匹配除了 字符 中的其他字母。
 	reg, err := regexp.Compile("[^\\w]")
+	fmt.Println(reg.String())
 	//reg, err := regexp.Compile("[^a-zA-Z0-9]+")
 	if err != nil {
 		return ""
