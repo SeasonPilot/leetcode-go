@@ -44,7 +44,6 @@ func (this *LRUCache) Get(key int) int {
 func (this *LRUCache) Put(key int, value int) {
 	if node, ok := this.cache[key]; !ok {
 		node = NewDLinkedNode(key, value)
-		this.cache[key] = node
 		this.addToHead(node)
 	} else {
 		node.value = value
@@ -58,6 +57,9 @@ func (this *LRUCache) addToHead(node *DLinkedNode) {
 
 	this.head.next = node
 	node.prev = this.head
+
+	// fixme: addToHead 有两处调用。增加 key 要放在 addToHead
+	this.cache[node.key] = node
 
 	this.size++
 	if this.size > this.capacity {
