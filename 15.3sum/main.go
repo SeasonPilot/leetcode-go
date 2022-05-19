@@ -7,6 +7,8 @@ func main() {
 	fmt.Println(threeSum(nums))
 }
 
+// 暴力求解
+// 未完成，未去重
 func threeSum(nums []int) [][]int {
 	var result [][]int
 	for i := 0; i < len(nums); i++ {
