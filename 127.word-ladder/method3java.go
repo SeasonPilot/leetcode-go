@@ -1,7 +1,7 @@
 package main
 
 // 链接：https://leetcode.cn/problems/word-ladder/solution/dan-xiang-bfs-shuang-xiang-bfs-golangban-p1en/
-// 双向 BFS   对齐覃超的 Java 版本思路。 practice 使用的是这个版本。
+// 双向 BFS   对齐覃超的 Java 版本思路。 最终使用此版本，practice 使用的是这个版本。
 func ladderLength4(beginWord string, endWord string, wordList []string) int {
 	// step1：先将 wordList 放到哈希表里，便于判断某个单词是否在 wordList 里
 	wordSet := make(map[string]struct{}) // 使用哈希map 便于查单词是否存在于wordlist，时间复杂度为O(1)
