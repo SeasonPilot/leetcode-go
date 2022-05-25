@@ -1,5 +1,7 @@
 package main
 
+// 最终使用此方法
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
