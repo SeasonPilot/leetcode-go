@@ -6,6 +6,8 @@ func main() {
 	fmt.Println(generateParenthesis(3))
 }
 
+// 回溯算法（深度优先遍历）
+// 递归函数在 generateParenthesis 里面的版本
 func generateParenthesis(n int) []string {
 	var result []string
 

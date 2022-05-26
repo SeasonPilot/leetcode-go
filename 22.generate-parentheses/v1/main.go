@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 生成所有可能的括号情况，包括非法的
 func main() {
 	generateParenthesis(3)
 }
