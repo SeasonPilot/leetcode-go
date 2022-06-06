@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 分治  最终使用此方法和 method4 方法
+// 分治  最终使用此方法和 method4、 method5 方法
 func mergeSort(arr []int) []int {
 	length := len(arr)
 	// terminator

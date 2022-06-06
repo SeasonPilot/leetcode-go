@@ -2,13 +2,12 @@ package main
 
 import "fmt"
 
-// 对齐小魔王 PPT 上的代码
+// 对齐小魔王 PPT 上的代码  最终使用此方法和 method1、 method5 方法
 // 对当前的序列（start到end）进行归并排序
 func mergeSort(arr []int, start, end int) {
 	if end <= start { // 递归的出口：不能再二分了，返回
 		return
 	}
-	//mid := start + (end-start)>>1 // 当前序列的中点索引
 	mid := (start + end) >> 1 // 当前序列的中点索引
 
 	mergeSort(arr, start, mid) // 递归左序列
@@ -19,7 +18,7 @@ func mergeSort(arr []int, start, end int) {
 
 	temp := make([]int, end-start+1) // 辅助数组，存放合并排序的数
 
-	k := 0                     // 从0开始
+	k := 0                     // 从0开始  temp 中已经填入的元素个数
 	for i <= mid && j <= end { // 如果 i j 都没越界
 		if arr[i] <= arr[j] { // arr[i]更小
 			temp[k] = arr[i] // 取arr[i]，确定了temp[k]
@@ -42,7 +41,7 @@ func mergeSort(arr []int, start, end int) {
 		j++
 	}
 
-	for p := 0; p < len(temp); p++ {
+	for p := 0; p < len(temp); p++ { // 将排序好的 temp copy 到 arr 中
 		arr[start+p] = temp[p]
 	}
 }
