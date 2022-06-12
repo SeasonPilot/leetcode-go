@@ -9,6 +9,7 @@ func main() {
 	fmt.Println(maxArea(height))
 }
 
+// 暴力破解  brute-force
 func maxArea(height []int) int {
 	var area int
 	// i j 是 index, 不是数组中的值
