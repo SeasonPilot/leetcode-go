@@ -9,7 +9,7 @@ func lengthOfLongestSubstring2(s string) int {
 
 	for right < len(s) {
 		// 有重复字符，先缩小左边界
-		if idx, ok := indexes[s[right]]; ok && idx >= left { // 右边界字符 rightChar 之前出现过并且 位置>=左边界。  因为是要缩小左边界，所以 idx 要>= left
+		if idx, ok := indexes[s[right]]; ok && idx >= left { // 右边界字符 rightChar 之前出现过并且 位置>=左边界。  因为是要缩小左边界，所以 idx 要>= left  // 窗口内有重复字符
 			left = idx + 1 // 缩小左边界。 移动左边界到 rightChar 之前出现过的 index + 1 位置
 		}
 		// 无重复字符
