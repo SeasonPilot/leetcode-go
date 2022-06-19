@@ -1,25 +1,46 @@
 package main
 
-import "fmt"
-
-func main() {
-	nums := []int{-1, 0, 1, 2, -1, -4}
-	fmt.Println(threeSum(nums))
-}
+import (
+	"reflect"
+	"sort"
+)
 
 // 暴力求解
-// 未完成，未去重
+// 排序 + DeepEqual 进行去重
 func threeSum(nums []int) [][]int {
 	var result [][]int
-	for i := 0; i < len(nums); i++ {
+	n := len(nums)
+	sort.Ints(nums) // 排序
+
+	for i := 0; i < n; i++ {
 		target := nums[i]
-		for j := 0; j < len(nums); j++ {
-			for k := i + 1; k < len(nums); k++ {
+		for j := i + 1; j < n; j++ {
+			for k := j + 1; k < n; k++ {
 				if nums[j]+nums[k] == -target {
-					result = append(result, []int{nums[j], nums[k], target})
+					tmp := []int{nums[i], nums[j], nums[k]}
+					//sort.Ints(tmp) // 排序
+					result = append(result, tmp)
 				}
 			}
 		}
 	}
-	return result
+	return killRepetion(result)
+}
+
+// 二维 slice 去重
+func killRepetion(nums [][]int) [][]int {
+	newRes := make([][]int, 0)
+	for i := 0; i < len(nums); i++ {
+		flag := false
+		for j := i + 1; j < len(nums); j++ {
+			if reflect.DeepEqual(nums[i], nums[j]) {
+				flag = true
+				break
+			}
+		}
+		if !flag {
+			newRes = append(newRes, nums[i])
+		}
+	}
+	return newRes
 }

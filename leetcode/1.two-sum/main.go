@@ -9,6 +9,7 @@ func main() {
 	fmt.Println(twoSum2(nums, target))
 }
 
+// 方法一：暴力枚举  O(n²)
 func twoSum(nums []int, target int) []int {
 	for i := 0; i < len(nums); i++ {
 		for j := i + 1; j < len(nums); j++ {
@@ -20,7 +21,7 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
-// 方法二：哈希表
+// 方法二：哈希表  O(n)
 func twoSum2(nums []int, target int) []int {
 	hashTable := map[int]int{}
 	for i, x := range nums {
