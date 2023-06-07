@@ -34,7 +34,7 @@ func threeSum(nums []int) [][]int {
 		}
 
 		// 跳过第一个数字重复的情况，否则会出现重复结果
-		for ; i < n-1 && nums[i] == nums[i+1]; i++ {
+		for ; i < n-1 && nums[i] == nums[i+1]; i++ { // i < n-1 而不是 i < n， 是因为 nums[i+1] 数组会越界，且 i 是从 0 开始。
 		}
 	}
 
