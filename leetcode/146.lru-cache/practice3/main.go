@@ -65,7 +65,6 @@ func (l *LRUCache) Put(key int, value int) {
 	if node, ok := l.cache[key]; ok {
 		node.value = value //fixme: node.key = value 是错误的
 		l.moveToHead(node)
-		return
 	} else {
 		newNode := initDLinkedNode(key, value) // fixme: key 在 DLinkedNode、LRUCache 中都存在，所以 put 的时候都需要设置值
 		l.cache[key] = newNode
