@@ -62,7 +62,7 @@ func (l *LRUCache) Put(key int, value int) {
 }
 
 func (l *LRUCache) moveToHead(node *DLinkedNode) {
-	l.removeNode(node) //顺序不能颠倒，一定要先 removeNode 再 addToHead
+	l.removeNode(node) //fixme:顺序不能颠倒，一定要先 removeNode 再 addToHead
 	l.addToHead(node)
 }
 
