@@ -1,6 +1,5 @@
 package main
 
-// 最终使用此方法
 // leetcode/0003.Longest-Substring-Without-Repeating-Characters/3. Longest Substring Without Repeating Characters.go
 // 解法三 滑动窗口-哈希桶
 func lengthOfLongestSubstring2(s string) int {
