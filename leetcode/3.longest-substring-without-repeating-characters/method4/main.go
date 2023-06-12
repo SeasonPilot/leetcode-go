@@ -1,6 +1,7 @@
 package main
 
-// 滑动窗口 labuladong
+// 最终使用此方法
+// 滑动窗口 labuladong。这个方法更容易记，且使用 滑动窗口算法框架,https://labuladong.github.io/article/fname.html?fname=滑动窗口技巧进阶
 func lengthOfLongestSubstring(s string) int {
 	windows := make(map[byte]int)
 
