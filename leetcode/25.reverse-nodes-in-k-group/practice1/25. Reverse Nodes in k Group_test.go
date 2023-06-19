@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -56,6 +57,7 @@ func Test_Problem25(t *testing.T) {
 	for _, q := range qs {
 		_, p := q.ans25, q.para25
 		fmt.Printf("【input】:%v       【output】:%v\n", p, List2Ints(reverseKGroup(Ints2List(p.one), p.two)))
+		fmt.Printf("【结果是否正确】:%v \n", reflect.DeepEqual(q.ans25.one, List2Ints(reverseKGroup(Ints2List(p.one), p.two))))
 	}
 	fmt.Printf("\n\n\n")
 }
